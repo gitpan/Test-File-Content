@@ -9,7 +9,7 @@
 #
 package Test::File::Content;
 BEGIN {
-  $Test::File::Content::VERSION = '1.0.0';
+  $Test::File::Content::VERSION = '1.0.1';
 }
 use strict;
 use warnings;
@@ -73,6 +73,7 @@ sub _check_files {
     @dirs = ('.') unless(@dirs);
     my @files;
     my $tree = File::Find::find( sub { push(@files, $File::Find::name) if($filter->($File::Find::name)) }, @dirs );
+    @files = sort @files;
     while ( my $file = shift @files ) {
         next if -d $file;
         $file = Path::Class::File->new($file);
@@ -123,7 +124,7 @@ Test::File::Content - Tests files for their content based on their file extensio
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSIS
 

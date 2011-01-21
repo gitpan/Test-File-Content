@@ -20,7 +20,7 @@ my %module_build_args = (
     'Moritz Onken'
   ],
   'dist_name' => 'Test-File-Content',
-  'dist_version' => '1.0.0',
+  'dist_version' => '1.0.1',
   'license' => 'bsd',
   'module_name' => 'Test::File::Content',
   'recommends' => {},
