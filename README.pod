@@ -13,8 +13,8 @@ sub _parse_args {
     my $type   = shift;
     my $filter = shift;
     if ( ref $filter eq 'HASH' ) {
-        while ( my ( $k, $v ) = each %$filter ) {
-            _parse_args( $type, $k, $v, @_ );
+        foreach my $k ( sort keys %$filter ) {
+            _parse_args( $type, $k, $filter->{$k}, @_ );
         }
     } elsif ( ref $filter eq 'ARRAY' ) {
         for (@$filter) {

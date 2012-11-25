@@ -2,7 +2,7 @@
 #
 # This file is part of Test-File-Content
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2012 by Moritz Onken.
 #
 # This is free software, licensed under:
 #

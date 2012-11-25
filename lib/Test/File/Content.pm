@@ -1,15 +1,15 @@
 #
 # This file is part of Test-File-Content
 #
-# This software is Copyright (c) 2011 by Moritz Onken.
+# This software is Copyright (c) 2012 by Moritz Onken.
 #
 # This is free software, licensed under:
 #
 #   The (three-clause) BSD License
 #
 package Test::File::Content;
-BEGIN {
-  $Test::File::Content::VERSION = '1.0.1';
+{
+  $Test::File::Content::VERSION = '1.0.2';
 }
 use strict;
 use warnings;
@@ -25,8 +25,8 @@ sub _parse_args {
     my $type   = shift;
     my $filter = shift;
     if ( ref $filter eq 'HASH' ) {
-        while ( my ( $k, $v ) = each %$filter ) {
-            _parse_args( $type, $k, $v, @_ );
+        foreach my $k ( sort keys %$filter ) {
+            _parse_args( $type, $k, $filter->{$k}, @_ );
         }
     } elsif ( ref $filter eq 'ARRAY' ) {
         for (@$filter) {
@@ -124,7 +124,7 @@ Test::File::Content - Tests files for their content based on their file extensio
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 SYNOPSIS
 
@@ -198,7 +198,7 @@ Moritz Onken
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Moritz Onken.
+This software is Copyright (c) 2012 by Moritz Onken.
 
 This is free software, licensed under:
 

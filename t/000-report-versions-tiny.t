@@ -55,6 +55,8 @@ eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Path::Class::File','0.23') };
 eval { $v .= pmver('Test::Harness','3.22') };
 eval { $v .= pmver('Test::More','0.96') };
+eval { $v .= pmver('strict','any version') };
+eval { $v .= pmver('warnings','any version') };
 
 
 
